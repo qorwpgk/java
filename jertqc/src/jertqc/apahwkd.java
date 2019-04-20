@@ -7,6 +7,7 @@ public class apahwkd extends JFrame{
 	public apahwkd() {
 		setTitle("메모장");
 		createMenu();
+		Text();
 		createToolBar();
 		createSplitPane();
 		setSize(500,400);
@@ -55,6 +56,11 @@ public class apahwkd extends JFrame{
 			//new JScrollPane(scrollList),new JScrollPane(new JLabel(new ImageIcon("images/mg1.jpg"))));
 	
 	//add(pane, BorderLayout.CENTER);
+	}
+	
+        private void Text() {
+		Container text = getContentPane();
+		text.add(new JTextArea());
 	}
 	public static void main(String[]args) {
 		new apahwkd();
