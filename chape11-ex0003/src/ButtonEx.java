@@ -3,20 +3,20 @@ import java.awt.*;
 
 public class ButtonEx extends JFrame {
 	public ButtonEx() {
-		setTitle("ÀÌ¹ÌÁö ¹öÆ° ¿¹Á¦");
+		setTitle("ì´ë¯¸ì§€ ë²„íŠ¼ ì˜ˆì œ");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Container c = getContentPane();
 		c.setLayout(new FlowLayout());
 
-		// 3°³ÀÇ ÀÌ¹ÌÁö¸¦ ÆÄÀÏ·ÎºÎÅÍ ÀĞ¾îµéÀÎ´Ù.
+	
 		ImageIcon normalIcon = new ImageIcon("images/normalIcon.gif"); 
 		ImageIcon rolloverIcon = new ImageIcon("images/rolloverIcon.gif"); 
 		ImageIcon pressedIcon = new ImageIcon("images/pressedIcon.gif"); 
 		
-		// 3°³ÀÇ ÀÌ¹ÌÁö¸¦ °¡Áø ¹öÆ° »ı¼º
-		JButton btn = new JButton("call~~", normalIcon); // normalIcon¿ë ÀÌ¹ÌÁö µî·Ï
-		btn.setPressedIcon(pressedIcon); // pressedIcon¿ë ÀÌ¹ÌÁö µî·Ï
-		btn.setRolloverIcon(rolloverIcon); // rolloverIcon¿ë ÀÌ¹ÌÁö µî·Ï
+		
+		JButton btn = new JButton("call~~", normalIcon); 
+		btn.setPressedIcon(pressedIcon); 
+		btn.setRolloverIcon(rolloverIcon); 
 		c.add(btn);
 		
 		setSize(250,150);
