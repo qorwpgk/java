@@ -5,7 +5,7 @@ public class GraphicsColorFontEx extends JFrame{
               private MyPanel panel = new MyPanel();
               
               public GraphicsColorFontEx(){
-            	  setTitle("Cpior, Font »ç¿ë ¿¹Á¦");
+            	  setTitle("Cpior, Font ì‚¬ìš© ");
             	  setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             	  setContentPane(panel);
             	  
