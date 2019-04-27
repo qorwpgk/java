@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class BlueLabelFrame extends JFrame {
 	public BlueLabelFrame(){
-		super("Blue Label ¸¸µé±â");
+		super("Blue Label ");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Container c = getContentPane();
 		c.setLayout(new FlowLayout());
