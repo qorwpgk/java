@@ -5,7 +5,7 @@ import javax.swing.*;
 
 public class DrawOvalWithMouse extends JFrame {
 	public DrawOvalWithMouse(){
-		super("¸¶¿ì½º·Î ¿ø ±×¸®±â");
+		super("ë§ˆìš°ìŠ¤ë¡œ ì› ê·¸ë¦¬ê¸°");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		setContentPane(new MyPanel());
