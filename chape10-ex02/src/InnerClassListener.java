@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class InnerClassListener extends JFrame{
 	public InnerClassListener(){
-		setTitle("Action ¿Ã∫•∆Æ ∏ÆΩ∫≥  øπ¡¶");
+		setTitle("Action Ïù¥Î≤§Ìä∏ Î¶¨Ïä§ÎÑà ÏòàÏ†ú");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Container c = getContentPane();
 		c.setLayout(new FlowLayout());
@@ -20,7 +20,7 @@ public class InnerClassListener extends JFrame{
 		public void actionPerformed(ActionEvent e){
 			JButton b = (JButton)e.getSource();
 			if(b.getText().equals("Action"))
-				b.setText("æ◊º«");
+				b.setText("");
 			else
 				b.setText("Action");
 			InnerClassListener.this.setTitle(b.getText());
