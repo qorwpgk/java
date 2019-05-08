@@ -18,9 +18,9 @@ public class GalagaGame extends JPanel implements KeyListener {
 	private ArrayList sprites = new ArrayList();
 	private Sprite starship;
 
-	private BufferedImage alienImage;
-	private BufferedImage shotImage;
-	private BufferedImage shipImage;
+	private BufferedImage alienImage;//몬스터
+	private BufferedImage shotImage;//탄환
+	private BufferedImage shipImage;//
        private BufferedImage MBossImage;//중간 보스
 	public GalagaGame() {
 		JFrame frame = new JFrame("Galaga Game");
