@@ -72,8 +72,10 @@ public class GalagaGame extends JPanel implements KeyListener {
 	}
 
 	public void fire() {
-		ShotSprite shot = new ShotSprite(this, shotImage, starship.getX() + 10, starship.getY() - 30);
-		sprites.add(shot);
+		ShotSprite shot0 = new ShotSprite(this, shotImage, starship.getX() + 10, starship.getY() - 30);
+		ShotSprite shot1 = new ShotSprite(this, shotImage, starship.getX() + 15, starship.getY() - 30);
+		sprites.add(shot0);
+		sprites.add(shot1);
 	}
 
 	@Override
