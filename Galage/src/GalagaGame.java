@@ -119,7 +119,7 @@ public class GalagaGame extends JPanel implements KeyListener {
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		if (e.getKeyCode() == KeyEvent.VK_LEFT)
+		if (e.getKeyCode() == KeyEvent.VK_LEFT)//로켓 상하좌우 움직임
 			starship.setDx(-5);
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT)
 			starship.setDx(+5);
