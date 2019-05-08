@@ -50,8 +50,8 @@ public class GalagaGame extends JPanel implements KeyListener {
 	private void initSprites() {
 		starship = new StarShipSprite(this, shipImage, 370, 550);
 		sprites.add(starship);
-		for (int y = 0; y < 5; y++) {
-			for (int x = 0; x < 12; x++) {
+		for (int y = 0; y < 6; y++) {
+			for (int x = 0; x < 15; x++) {
 				Sprite alien = new AlienSprite(this, alienImage, 100 + (x * 50), (50) + y * 30);
 				sprites.add(alien);
 			}
