@@ -25,15 +25,16 @@ public class GalagaGame extends JPanel implements KeyListener {
 	public GalagaGame() {
 		JFrame frame = new JFrame("Galaga Game");
 
-		frame.setSize(700, 600);//»≠∏È ≈©±‚
+		frame.setSize(700, 600);//ÌôîÎ©¥ ÌÅ¨Í∏∞
 		frame.add(this);
 		frame.setResizable(false);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		try {
-			shotImage = ImageIO.read(new File("duddn.png"));
+			shotImage = ImageIO.read(new File("fire.png"));
 			shipImage = ImageIO.read(new File("starship.png"));
+			alienImage = ImageIO.read(new File("gustn.png"));
 			alienImage = ImageIO.read(new File("gustn.png"));
 			 
 			
@@ -78,7 +79,7 @@ public class GalagaGame extends JPanel implements KeyListener {
 	@Override
 	public void paint(Graphics g) {
 		super.paint(g);
-		g.setColor(Color.YELLOW);//»≠∏Èªˆ πŸ≤Ÿ±‚
+		g.setColor(Color.YELLOW);//ÌôîÎ©¥ÏÉâ Î∞îÍæ∏Í∏∞
 		g.fillRect(0, 0, 800, 600);
 		for (int i = 0; i < sprites.size(); i++) {
 			Sprite sprite = (Sprite) sprites.get(i);
@@ -120,7 +121,7 @@ public class GalagaGame extends JPanel implements KeyListener {
 			starship.setDx(-5);
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT)
 			starship.setDx(+5);
-		if (e.getKeyCode() == KeyEvent.VK_ALT)//∑Œƒœ ≥Ø∏Æ±‚
+		if (e.getKeyCode() == KeyEvent.VK_A)//Î°úÏºì ÎÇ†Î¶¨Í∏∞
 			fire();
 		
 	}
