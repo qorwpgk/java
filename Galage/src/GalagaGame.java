@@ -50,7 +50,7 @@ public class GalagaGame extends JPanel implements KeyListener {
 	private void initSprites() {
 		starship = new StarShipSprite(this, shipImage, 370, 550);
 		sprites.add(starship);
-		for (int y = 0; y < 6; y++) {
+		for (int y = 0; y < 5; y++) {
 			for (int x = 0; x < 15; x++) {
 				Sprite alien = new AlienSprite(this, alienImage, 100 + (x * 50), (50) + y * 30);
 				sprites.add(alien);
@@ -123,6 +123,10 @@ public class GalagaGame extends JPanel implements KeyListener {
 			starship.setDx(-5);
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT)
 			starship.setDx(+5);
+		if (e.getKeyCode() == KeyEvent.VK_UP)
+			starship.setDy(-5);
+		if (e.getKeyCode() == KeyEvent.VK_DOWN)
+			starship.setDy(+5);
 		if (e.getKeyCode() == KeyEvent.VK_A)//로켓 날리기
 			fire();
 		
@@ -133,6 +137,10 @@ public class GalagaGame extends JPanel implements KeyListener {
 		if (e.getKeyCode() == KeyEvent.VK_LEFT)
 			starship.setDx(0);
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT)
+			starship.setDx(0);
+		if (e.getKeyCode() == KeyEvent.VK_UP)
+			starship.setDx(0);
+		if (e.getKeyCode() == KeyEvent.VK_DOWN)
 			starship.setDx(0);
 	}
 
