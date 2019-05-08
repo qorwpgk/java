@@ -11,10 +11,10 @@ public class AlienSprite extends Sprite {
 
 	@Override
 	public void move() {
-		if (((dx < 0) && (x < 10)) || ((dx > 0) && (x > 800))) {
+		if (((dx < 0) && (x < 10)) || ((dx > 0) && (x > 650))) {
 			dx = -dx;
 			y += 10;
-			if (y > 600) {
+			if (y > 700) {
 				game.endGame();
 			}
 		}
