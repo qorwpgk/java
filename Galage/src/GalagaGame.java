@@ -21,7 +21,7 @@ public class GalagaGame extends JPanel implements KeyListener {
 	private BufferedImage alienImage;
 	private BufferedImage shotImage;
 	private BufferedImage shipImage;
-
+       private BufferedImage MBossImage;//중간 보스
 	public GalagaGame() {
 		JFrame frame = new JFrame("Galaga Game");
 
@@ -36,7 +36,7 @@ public class GalagaGame extends JPanel implements KeyListener {
 			shipImage = ImageIO.read(new File("starship.png"));
 			alienImage = ImageIO.read(new File("gustn.png"));
 			alienImage = ImageIO.read(new File("gustn.png"));
-			 
+	                MBossImage = ImageIO.read(new File("gustn.png"));
 			
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -54,6 +54,8 @@ public class GalagaGame extends JPanel implements KeyListener {
 			for (int x = 0; x < 15; x++) {
 				Sprite alien = new AlienSprite(this, alienImage, 100 + (x * 50), (50) + y * 30);
 				sprites.add(alien);
+				Sprite MBoss = new AlienSprite(this, MBossImage, 100 + (x * 1), (1) + y * 1);
+				sprites.add(MBoss);
 			}
 		}
 	}
