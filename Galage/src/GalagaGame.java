@@ -18,6 +18,8 @@ public class GalagaGame extends JPanel implements KeyListener {
 	private ArrayList sprites = new ArrayList();
 	private Sprite starship;
 
+	 private int shot = 10;
+          private int rerode = 9;
 	private BufferedImage alienImage;//몬스터
 	private BufferedImage shotImage;//탄환
 	private BufferedImage shipImage;//플레이어
@@ -77,10 +79,8 @@ public class GalagaGame extends JPanel implements KeyListener {
 	public void fire() {
 		ShotSprite shot0 = new ShotSprite(this, shotImage, starship.getX() + 10, starship.getY() - 30);//탄환 위치
 		ShotSprite shot1 = new ShotSprite(this, shotImage, starship.getX() + 15, starship.getY() - 30);
-		ShotSprite shot2 = new ShotSprite(this, shotImage, starship.getX() + 0 , starship.getY() -30);
 		sprites.add(shot0);
 		sprites.add(shot1);
-		sprites.add(shot2);
 	}
 
 	@Override
@@ -132,11 +132,21 @@ public class GalagaGame extends JPanel implements KeyListener {
 			starship.setDy(-5);
 		if (e.getKeyCode() == KeyEvent.VK_DOWN)
 			starship.setDy(+5);
-		if (e.getKeyCode() == KeyEvent.VK_A)//로켓 날리기
-			fire();
+		if (shot != 0) {
+			if (e.getKeyCode() == KeyEvent.VK_SPACE) {//로켓 날리기
+				shot--;
+				fire();
 		
 	}
+}
 
+		if (rerode != 0) {
+			if (e.getKeyCode() == KeyEvent.VK_R) {
+				shot = 20;
+				rerode--;
+				}
+			}
+		}
 	@Override
 	public void keyReleased(KeyEvent e) {
 		if (e.getKeyCode() == KeyEvent.VK_LEFT)
