@@ -7,27 +7,25 @@ import java.net.*;
 import javax.swing.*;
 
 public class CalculationClientFrame extends JFrame{
-	
 	private JTextField startTf = new JTextField(7);
-	private JTextField opeartorTf = new JTextField(3);
+	private JTextField operatorTf = new JTextField(3);
 	private JTextField endTf = new JTextField(7);
 	private JTextField resTf = new JTextField(7);
-	private JButton calcBtn = new JButton("∞ËªÍ");
+	private JButton calcBtn = new JButton("Í≥ÑÏÇ∞");
 	private Socket socket = null;
 	private BufferedReader in = null;
 	private BufferedWriter out = null;
 	
-	
 	public CalculationClientFrame(){
-		super("∞ËªÍ ≈¨∂Û¿Ãæ∆Æ");
-		setSize(410,100);
+		super("Í≤åÏÇ∞ ÌÅ¥ÎùºÏù¥Ïñ∏Ìä∏");
+		setSize(410, 100);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Container c = getContentPane();
 		c.setLayout(new FlowLayout());
 		c.add(startTf);
-		c.add(opeartorTf);
+		c.add(operatorTf);
 		c.add(endTf);
-		c.add(new JLabel("="));
+		c.add(new JLabel(" = "));
 		c.add(resTf);
 		c.add(calcBtn);
 		
@@ -35,22 +33,19 @@ public class CalculationClientFrame extends JFrame{
 		
 		setupConnection();
 		
-		calcBtn.addActionListener(new ActionListener() {
+		calcBtn.addActionListener(new ActionListener(){
 			
-			private int O;
-
 			@Override
-			public void actionPerformed(ActionEvent argO) {
-				// TODO Auto-generated method stub
+			public void actionPerformed(ActionEvent arg0){
 				try{
-					String startText = startTf.getText().trim();
-					String   operatorText = opeartorTf.getText().trim();
+					String StartText = startTf.getText().trim();
+					String operatorText = operatorTf.getText().trim();
 					String endText = endTf.getText().trim();
 					
-					if(startText.length()  ==  O     || 
-							operatorText.length() == O || endText.length() == O)
-		                    return;
-					out.write(startText+"\n");
+					if(StartText.length() == 0 || operatorText.length() == 0 || endText.length() == 0)
+					return;
+					
+					out.write(StartText+"\n");
 					out.write(operatorText+"\n");
 					out.write(endText+"\n");
 					out.flush();
@@ -58,27 +53,30 @@ public class CalculationClientFrame extends JFrame{
 					String result = in.readLine();
 					resTf.setText(result);
 				}catch (IOException e){
-					System.out.println("≈¨∂Û¿Ãæ∆Æ : º≠πˆ∑Œ∫Œ≈Õ ø¨∞· ¡æ∑·");
+					System.out.println("ÌÅ¥ÎùºÏù¥Ïñ∏Ìä∏ : ÏÑúÎ≤ÑÎ°úÎ∂ÄÌÑ∞ Ïó∞Í≤∞ Ï¢ÖÎ£å");
 					return;
 					//e.printStackTrace();
 				}
 			}
 		});
 	}
+    
 	public void setupConnection(){
 		try{
 			socket = new Socket("localhost", 9998);
-			in =  new BufferedReader(new 
-					InputStreamReader(socket.getInputStream()));
-			out =  new BufferedWriter(new
-					OutputStreamWriter(socket.getOutputStream()));
+			in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+			out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));	
 		}catch (UnknownHostException e){
 			e.printStackTrace();
 		}catch (IOException e){
-			e.printStackTrace();
+		    e.printStackTrace();	
 		}
+		
 	}
-     public static void main(String[]args){
-    	 new CalculationClientFrame();
-     }
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        new CalculationClientFrame();
+	}
+
 }
