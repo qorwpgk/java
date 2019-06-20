@@ -21,12 +21,12 @@ public class CalculationServerFrame extends JFrame {
 	private JTextArea log = new JTextArea();
 
 	public CalculationServerFrame() {
-		super("¸ÖÆ¼ ½º·¹µå °è»ê ¼­¹ö");
+		super("ë©€í‹° ìŠ¤ë ˆë“œ ê³„ì‚° ì„œë²„");
 		setSize(250, 250);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		Container c = getContentPane();
-		c.add(new JLabel("°è»ê ¼­¹ö ÀÔ´Ïµğ"));
+		c.add(new JLabel("ê³„ì‚° ì„œë²„ ì…ë‹ˆë””"));
 		c.add(new JScrollPane(log), BorderLayout.CENTER);
 		setVisible(true);
 
@@ -42,7 +42,7 @@ public class CalculationServerFrame extends JFrame {
 				listener = new ServerSocket(9998);
 				while (true) {
 					socket = listener.accept();
-					log.append("Å¬¶óÀÌ¾ğÆ® ¿¬°áµÊ\n");
+					log.append("í´ë¼ì´ì–¸íŠ¸ ì—°ê²°ë¨\n");
 					new ServiceThread(socket).start();
 
 				}
@@ -96,7 +96,7 @@ public class CalculationServerFrame extends JFrame {
 				case "*" : res = a*b; resText = Integer.toString(res); break;
 				
 				case "/" : 
-					if(b==0)resText = "0À¸·Ğ ³ª´­¼ö ¾øÀ½";
+					if(b==0)resText = "0ìœ¼ë¡  ë‚˜ëˆŒìˆ˜ ì—†ìŒ";
 					else{
 						res = a/b;
 						resText = Integer.toString(res);
@@ -105,15 +105,15 @@ public class CalculationServerFrame extends JFrame {
 					}	
 				break;
 				default:
-					resText = "Àß¸øµÈ ¿¬»ê";
+					resText = "ì˜ëª»ëœ ì—°ì‚°";
 				}
 				out.write(resText + "\n");
 				out.flush();
-				log.append(first + operator + second + "=" +resText + "/n");
+				log.append(first + operator + second + "=" +resText + "\n");
 				
 				} catch (IOException e) {
-					log.append("¿¬°áÁ¾·á\n");
-					System.out.println("¿¬°á Á¾·á");
+					log.append("ì—°ê²°ì¢…ë£Œ\n");
+					System.out.println("ì—°ê²° ì¢…ë£Œ");
 					return;
 					//e.printStackTrace();
 					
