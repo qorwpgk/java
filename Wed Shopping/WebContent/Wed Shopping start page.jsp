@@ -6,7 +6,7 @@
 href = "http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <meta charset="EUC-KR">
 <title>Insert title here</title>
-</head>
+</head>1
 <body>
 <%@ include file="menu.jsp" %>
 <%! String greeting = "웹 쇼핑몰에 오신 것을 환영합니다";
