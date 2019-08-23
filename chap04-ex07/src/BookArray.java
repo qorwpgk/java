@@ -15,7 +15,7 @@ public class BookArray {
 			System.out.print("Title :");
 			String title = scanner.nextLine();
 			System.out.print("Author :");
-			String author = scanner.nextLine();
+			String author = scanner.nextLine();gg
 			book[i] = new Book(title,author);hh
 		}
 		
